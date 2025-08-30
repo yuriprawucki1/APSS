@@ -1,8 +1,8 @@
 "use client"
 
-import { useSidebar } from "@/contexts/SidebarContext"
 import { Sidebar } from "@/components/ui/Sidebar"
 import { adminMenuItems } from "@/constants/adminMenuItens"
+import { useSidebar } from "@/contexts/SidebarContext"
 
 interface AdminLayoutContextProps {
   children: React.ReactNode
@@ -20,7 +20,7 @@ export function AdminLayoutContext({ children }: AdminLayoutContextProps) {
         userName="John Doe"
         userEmail="john@example.com"
       />
-      <main 
+      <main
         className="flex-1 min-h-screen transition-all duration-300 ease-[cubic-bezier(0.4,0.0,0.2,1)]"
         style={{ marginLeft: `${sidebarWidth}px` }}
       >

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
-import { SidebarProvider } from "@/contexts/SidebarContext"
 import { AdminLayoutContext } from "@/contexts/AdminLayoutContext"
+import { SidebarProvider } from "@/contexts/SidebarContext"
 
 export const metadata: Metadata = {
   title: "APSS - Admin",
@@ -24,9 +24,7 @@ export default function AdminLayout({
 }) {
   return (
     <SidebarProvider>
-      <AdminLayoutContext>
-        {children}
-      </AdminLayoutContext>
+      <AdminLayoutContext>{children}</AdminLayoutContext>
     </SidebarProvider>
   )
 }
