@@ -1,7 +1,10 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages: ['ldapts'], // Trata ldapts como pacote externo do servidor
+  experimental: {
+    // Configurações experimentais se necessário
+  },
 }
 
 export default nextConfig
