@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { auth } from "@/libs/auth"
-import { ldap } from "@/libs/ldapts"
+import { ldap } from "@/libs/ldap"
 
 export async function POST(req: Request) {
   const { username, password } = await req.json()

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 
 export async function GET() {
   try {
-    const { ldap } = await import("@/libs/ldapts")
+    const { ldap } = await import("@/libs/ldap")
 
     console.log("🧪 Iniciando teste de conectividade LDAP...")
     const isConnected = await ldap.testConnection()

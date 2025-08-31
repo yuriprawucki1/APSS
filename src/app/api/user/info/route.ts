@@ -15,7 +15,7 @@ export async function GET(req: Request) {
       )
     }
 
-    const { ldap } = await import("@/libs/ldapts")
+    const { ldap } = await import("@/libs/ldap")
 
     console.log(`🔍 Buscando informações do usuário: ${username}`)
     const userInfo = await ldap.getUserInfo(username)
