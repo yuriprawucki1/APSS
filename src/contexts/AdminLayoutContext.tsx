@@ -24,9 +24,7 @@ export function AdminLayoutContext({ children }: AdminLayoutContextProps) {
         className="flex-1 min-h-screen transition-all duration-300 ease-[cubic-bezier(0.4,0.0,0.2,1)]"
         style={{ marginLeft: `${sidebarWidth}px` }}
       >
-        <div className="container mx-auto p-8 max-w-5xl">
-          {children}
-        </div>
+        <div className="container mx-auto p-8 max-w-5xl">{children}</div>
       </main>
     </div>
   )
