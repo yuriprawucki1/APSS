@@ -101,12 +101,12 @@ export default function TestsPage() {
   }
 
   return (
-    <div className="container mx-auto p-8 max-w-4xl">
+    <div>
       <h1 className="text-3xl font-bold mb-8">Teste de LDAP e Conectividade</h1>
 
       <div className="grid gap-6">
         <div className="flex gap-6 flex-wrap">
-          <Card shadow="lg" className="rounded-2xl border flex-1 min-w-[280px]">
+          <Card shadow="lg" className="rounded-2xl border border-content3 flex-1 min-w-[280px]">
             <CardHeader className="flex flex-col items-start pb-0">
               <h2 className="text-xl font-bold">Teste de Conectividade</h2>
               <p className="text-sm text-gray-500">
@@ -125,7 +125,7 @@ export default function TestsPage() {
             </CardBody>
           </Card>
 
-          <Card shadow="lg" className="rounded-2xl border flex-1 min-w-[280px]">
+          <Card shadow="lg" className="rounded-2xl border border-content3 flex-1 min-w-[280px]">
             <CardHeader className="flex flex-col items-start pb-0">
               <h2 className="text-xl font-bold">Teste de Rede</h2>
               <p className="text-sm text-gray-500">
@@ -145,7 +145,7 @@ export default function TestsPage() {
           </Card>
         </div>
 
-        <Card shadow="lg" className="rounded-2xl border">
+        <Card shadow="lg" className="rounded-2xl border border-content3">
           <CardHeader className="flex flex-col items-start pb-0">
             <h2 className="text-xl font-bold">Buscar Usuário</h2>
             <p className="text-sm text-gray-500">
@@ -177,29 +177,27 @@ export default function TestsPage() {
         </Card>
 
         {result && (
-          <Card shadow="lg" className="rounded-2xl border">
+          <Card shadow="lg" className="rounded-2xl border border-content3">
             <CardHeader className="flex flex-col items-start pb-2">
               <h2 className="text-xl font-bold">Resultado</h2>
             </CardHeader>
             <Divider />
             <CardBody>
               <div
-                className={`p-4 rounded-md ${
-                  result.success
-                    ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800"
-                    : "bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800"
-                }`}
+                className={`p-4 rounded-md ${result.success
+                  ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800"
+                  : "bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800"
+                  }`}
               >
                 <div className="flex items-center mb-2">
                   <span
                     className={`inline-block w-3 h-3 rounded-full mr-2 ${result.success ? "bg-green-500" : "bg-red-500"}`}
                   ></span>
                   <span
-                    className={`font-medium ${
-                      result.success
-                        ? "text-green-800 dark:text-green-200"
-                        : "text-red-800 dark:text-red-200"
-                    }`}
+                    className={`font-medium ${result.success
+                      ? "text-green-800 dark:text-green-200"
+                      : "text-red-800 dark:text-red-200"
+                      }`}
                   >
                     {result.success ? "Sucesso" : "Erro"}
                   </span>
