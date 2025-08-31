@@ -6,35 +6,41 @@ export async function GET() {
   try {
     console.log("🌐 Testando conectividade de rede básica...")
 
-    const testNetworkConnection = (host: string, port: number): Promise<boolean> => {
+    const testNetworkConnection = (
+      host: string,
+      port: number,
+    ): Promise<boolean> => {
       return new Promise((resolve) => {
-        let resolved = false;
-        const socket = createConnection({ host, port, timeout: 10000 });
+        let resolved = false
+        const socket = createConnection({ host, port, timeout: 10000 })
 
         const finish = (result: boolean) => {
           if (!resolved) {
-            resolved = true;
-            socket.destroy();
-            resolve(result);
+            resolved = true
+            socket.destroy()
+            resolve(result)
           }
-        };
+        }
 
         socket.on("connect", () => {
-          console.log(`✅ Conexão TCP bem-sucedida para ${host}:${port}`);
-          finish(true);
-        });
+          console.log(`✅ Conexão TCP bem-sucedida para ${host}:${port}`)
+          finish(true)
+        })
 
         socket.on("error", (err) => {
-          console.error(`❌ Erro na conexão TCP para ${host}:${port}:`, err.message);
-          finish(false);
-        });
+          console.error(
+            `❌ Erro na conexão TCP para ${host}:${port}:`,
+            err.message,
+          )
+          finish(false)
+        })
 
         socket.on("timeout", () => {
-          console.error(`❌ Timeout na conexão TCP para ${host}:${port}`);
-          finish(false);
-        });
-      });
-    };
+          console.error(`❌ Timeout na conexão TCP para ${host}:${port}`)
+          finish(false)
+        })
+      })
+    }
 
     const host = env.LDAP_HOST
     const port = env.LDAP_PORT
