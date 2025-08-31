@@ -1,6 +1,13 @@
 "use client"
 
-import { Button, Card, CardBody, CardHeader, Divider, Input } from "@heroui/react"
+import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Divider,
+  Input,
+} from "@heroui/react"
 import { useState } from "react"
 
 interface TestResult {
@@ -102,7 +109,9 @@ export default function TestsPage() {
           <Card shadow="lg" className="rounded-2xl border flex-1 min-w-[280px]">
             <CardHeader className="flex flex-col items-start pb-0">
               <h2 className="text-xl font-bold">Teste de Conectividade</h2>
-              <p className="text-sm text-gray-500">Teste a conectividade LDAP com o servidor.</p>
+              <p className="text-sm text-gray-500">
+                Teste a conectividade LDAP com o servidor.
+              </p>
             </CardHeader>
             <CardBody>
               <Button
@@ -119,7 +128,9 @@ export default function TestsPage() {
           <Card shadow="lg" className="rounded-2xl border flex-1 min-w-[280px]">
             <CardHeader className="flex flex-col items-start pb-0">
               <h2 className="text-xl font-bold">Teste de Rede</h2>
-              <p className="text-sm text-gray-500">Teste a conectividade de rede TCP com o servidor.</p>
+              <p className="text-sm text-gray-500">
+                Teste a conectividade de rede TCP com o servidor.
+              </p>
             </CardHeader>
             <CardBody>
               <Button
@@ -137,7 +148,10 @@ export default function TestsPage() {
         <Card shadow="lg" className="rounded-2xl border">
           <CardHeader className="flex flex-col items-start pb-0">
             <h2 className="text-xl font-bold">Buscar Usuário</h2>
-            <p className="text-sm text-gray-500">Busque informações de um usuário específico no LDAP/Active Directory.</p>
+            <p className="text-sm text-gray-500">
+              Busque informações de um usuário específico no LDAP/Active
+              Directory.
+            </p>
           </CardHeader>
           <CardBody>
             <div className="flex gap-2 mb-4">
@@ -170,18 +184,22 @@ export default function TestsPage() {
             <Divider />
             <CardBody>
               <div
-                className={`p-4 rounded-md ${result.success
-                  ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800"
-                  : "bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800"}`}
+                className={`p-4 rounded-md ${
+                  result.success
+                    ? "bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800"
+                    : "bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800"
+                }`}
               >
                 <div className="flex items-center mb-2">
                   <span
                     className={`inline-block w-3 h-3 rounded-full mr-2 ${result.success ? "bg-green-500" : "bg-red-500"}`}
                   ></span>
                   <span
-                    className={`font-medium ${result.success
-                      ? "text-green-800 dark:text-green-200"
-                      : "text-red-800 dark:text-red-200"}`}
+                    className={`font-medium ${
+                      result.success
+                        ? "text-green-800 dark:text-green-200"
+                        : "text-red-800 dark:text-red-200"
+                    }`}
                   >
                     {result.success ? "Sucesso" : "Erro"}
                   </span>
@@ -206,8 +224,7 @@ export default function TestsPage() {
                         <strong>Email:</strong> {result.user.email}
                       </p>
                       <p>
-                        <strong>Departamento:</strong>{" "}
-                        {result.user.department}
+                        <strong>Departamento:</strong> {result.user.department}
                       </p>
                       <p>
                         <strong>Cargo:</strong> {result.user.title}
